@@ -1,0 +1,62 @@
+<nav class="sidebar-sticky sticky-top flex-md-nowrap">
+  <div class="sidebar-heading mb-3">Navigation</div>
+  <ul class="nav flex-column">
+    <!-- Overview Dropdown -->
+    <li class="nav-item">
+      <a [routerLink]="['/overview']" [queryParams]="{dep: undefined}" (click)="toggleDropdown('overview')" class="nav-link d-flex justify-content-between align-items-center" [ngClass]="{'active': isActive('/overview') || isSubMenuActive(['Produktion', 'NET', 'IT'])}">
+        <span>
+          <i id="color-icon" class="bi bi-table mr-1"></i>
+          Overview
+        </span>
+        <i *ngIf="userInfo.isAdmin" [ngClass]="isDropdownOpen('overview') ? 'bi bi-arrow-up-short' : 'bi bi-arrow-down-short'"></i>
+      </a>
+      <ul *ngIf="userInfo.isAdmin" [ngClass]="{'show': isDropdownOpen('overview')}" class="nav flex-column ms-4">
+        <li class="nav-item">
+          <a [routerLink]="['/overview']" [queryParams]="{dep: 'Produktion'}" [ngClass]="{'active': isActive('/overview?dep=Produktion')}" class="nav-link pl-5">
+            <i class="bi bi-building-fill-gear mr-1"></i>
+            Produktion
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/overview']" [queryParams]="{dep: 'IT'}" [ngClass]="{'active': isActive('/overview?dep=IT')}" class="nav-link pl-5">
+            <i class="bi bi-pc-display-horizontal mr-1"></i>
+            IT
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/overview']" [queryParams]="{dep: 'NET'}" [ngClass]="{'active': isActive('/overview?dep=NET')}" class="nav-link pl-5">
+            <i class="bi bi-diagram-2 mr-1"></i>
+            NET
+          </a>
+        </li>
+      </ul>
+    </li>
+    
+    <!-- Keywords Dropdown -->
+    <li class="nav-item">
+      <a [routerLink]="['/keywords']" (click)="toggleDropdown('keywords')" class="nav-link d-flex justify-content-between align-items-center" [ngClass]="{'active': isActive('/keywords') || isSubMenuActive(['keyword-form'])}">
+        <span>
+          <i id="color-icon" class="bi bi-tag mr-1"></i>
+          Keywords
+        </span>
+        <i [ngClass]="isDropdownOpen('keywords') ? 'bi bi-arrow-up-short' : 'bi bi-arrow-down-short'"></i>
+      </a>
+      <ul [ngClass]="{'show': isDropdownOpen('keywords')}" class="nav flex-column ms-4">
+        <li class="nav-item">
+          <a [routerLink]="['/keyword-form']" [ngClass]="{'active': isActive('/keyword-form')}" class="nav-link pl-5">
+            <i class="bi bi-file-plus mr-1"></i>
+            Add Keyword
+          </a>
+        </li>
+      </ul>
+    </li>
+    
+    <!-- Mailview -->
+    <li class="nav-item">
+      <a [routerLink]="['/mailview']" [ngClass]="{'active': isActive('/mailview')}" class="nav-link">
+        <i id="color-icon" class="bi bi-mailbox mr-1"></i>
+        Mailview
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,29 @@
+<section class="vh-100 gradient-custom">
+  <div class="position-relative">
+    <!-- Logo -->
+    <!-- <img src="../../RaiffeisenGiebelkreuz.png" class="logo" alt="Raiffeisen Logo"> -->
+    
+    <!-- Login Container -->
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="card bg-dark text-white" style="border-radius: 1rem; max-width: 400px; width: 100%; position: relative;">
+            <div class="card-body p-4 text-center">
+                <h2 class="fw-bold mb-3 text-uppercase">Login</h2>
+                <p class="text-white-50 mb-4">Please enter your login and password!</p>
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-outline mb-3">
+                        <input type="email" id="typeEmailX" class="form-control form-control-lg input-field" [(ngModel)]="email" name="email" required>
+                        <label for="typeEmailX" class="form-label">Email</label>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <input type="password" id="typePasswordX" class="form-control form-control-lg input-field" [(ngModel)]="password" name="password" required>
+                        <label for="typePasswordX" class="form-label">Password</label>
+                    </div>
+                    <p class="small mb-4"><a href="#!" class="text-warning">Forgot Password?</a></p>
+                    <button class="btn btn-submit" type="submit">Log In</button>
+                </form>
+                <p class="small mt-4"><a href="#!" class="text-warning">RLB Kärnten IT-Tool</a></p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

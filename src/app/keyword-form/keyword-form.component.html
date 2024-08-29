@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h2>Add Keyword</h2>
+  <div class="btn-toolbar mb-2 mb-md-0"></div>
+</div>
+
+<form [formGroup]="keywordForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="form-name">Keyword (name): </label>
+    <input type="text" class="form-control" id="form-name" formControlName="name">
+  </div><br>
+
+  <div class="form-group">
+    <label>Control: </label>
+    <div class="form-check">
+      <input type="radio" name="control" class="form-check-input" id="form-radio-weekly_firstworkday" formControlName="control" value="weekly_firstworkday">
+      <label for="form-radio-weekly_firstworkday" class="form-check-label">Weekly (first workday)</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="control" class="form-check-input" id="form-radio-daily" formControlName="control" value="daily">
+      <label for="form-radio-daily" class="form-check-label">Daily (every workday)</label>
+    </div>
+    <br>
+  </div>
+
+  <div class="form-group">
+    <label>Department: </label>
+    <select class="form-department-select" formControlName="department" [attr.disabled]="!isAdmin ? true : null">
+      <option value="IT">IT</option>
+      <option value="NET">NET</option>
+      <option value="Produktion">Produktion</option>
+    </select>
+  </div>
+  
+  
+
+  <div class="form-group">
+    <label for="form-responsiblePersons">Choose one or more responsible Person/s</label><br>
+    <div class="badge-container" (click)="showPopup()">
+      <span *ngIf="selectedPersons.length === 0" class="badge bg-secondary">Click to select persons</span>
+      <ng-container *ngFor="let person of selectedPersons">
+        <span class="badge bg-primary me-2 mb-2"><span class="remove-person" (click)="removePerson($event, person)">x</span>{{person.name}}</span>
+      </ng-container>     
+    </div>          
+  </div><br><br>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!keywordForm.valid">Submit</button>
+  <div *ngIf="keywordForm.invalid"></div>
+</form>
+
+<app-person-selection-popup *ngIf="isPopupVisible" (close)="handlePopupClose($event)" [selectedPersons]="selectedPersons" [department]="getDepartment()"></app-person-selection-popup>

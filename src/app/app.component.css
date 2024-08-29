@@ -1,0 +1,14 @@
+.toast-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1050;
+  }
+  
+  .toast {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  
+  

@@ -1,0 +1,82 @@
+.gradient-custom {
+  background-image: url('../../worthersee_picture.jpg');
+  background-size: cover; /* Image covers the container */
+  background-position: center; 
+  background-repeat: no-repeat;
+  height: 100vh; /* max height (image) */
+  width: 98.9vw; /* IMPORTANT! DO NOT CHANGE - perfect fit  */
+  overflow: hidden; /* avoids scrolling */
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+  margin: 0; /* no default margin */
+}
+
+/* Positionierung des Logos 
+.logo {
+  position: absolute;
+  top: 5%;  Justiere den Abstand vom oberen Rand 
+  left: 50%;  Zentriere horizontal 
+  transform: translate(-50%, -50%);  Zentriere das Logo 
+  width: 50px;  Setze die Breite des Logos 
+  z-index: 2;  Stelle sicher, dass das Logo hinter dem Inhalt ist 
+}*/
+
+/* Karte */
+.card {
+  background: rgba(0, 0, 0, 0.8); 
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1; 
+  padding: 2rem;
+  max-width: 100%; 
+}
+
+.btn-submit {
+  background-color: #fbf315; 
+  color: #000000;
+  border: none; 
+  padding: 0.75rem 1.5rem; 
+  border-radius: 0.5rem; 
+  font-size: 1rem; 
+  font-weight: bolder;
+  transition: all 0.3s ease; 
+}
+
+.btn-submit:hover {
+  background-color: #cec926; 
+  color: #000000; 
+  cursor: pointer; 
+}
+
+/* Link Design */
+a.text-warning {
+  color: #fbf315;
+  text-decoration: none;
+}
+
+a.text-warning:hover {
+  text-decoration: underline rgb(255, 255, 255); 
+}
+
+/* Inputfields design */
+.input-field {
+  background-color: #ffffff; 
+  border: 2px solid #333; 
+  border-radius: 0.5rem; 
+  color: #000000; 
+  padding: 0.75rem; 
+  /*transition: border-color 0.3s ease; /* Übergangseffekt für die Umrandungsfarbe */
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.input-field:focus {
+  border-color: #fbf315; 
+  outline: none; 
+}
+
+.form-outline {
+  margin-bottom: 1rem;
+}

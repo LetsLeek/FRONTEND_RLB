@@ -1,0 +1,71 @@
+/* Allgemeine Tabellenstile */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table th {
+    font-weight: bold;
+    background-color: #f8f9fa;
+    color: #343a40;
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Zeilen abwechselnd einfärben */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f1f2f3;
+  }
+  
+  /* Hover-Effekt für Zeilen */
+  .table-hover tbody tr:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Button-Stile */
+  .custom-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    border-bottom: 2px solid #000000; /* Unterstrich-Effekt bei Hover */
+  }
+
+  .custom-btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3 ease;
+  }
+
+  .custom-btn:hover::after {
+    width: 100%;
+  }
+
+  th {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .bi-arrow-up, .bi-arrow-down {
+    margin-left: 5px;
+  }
+  

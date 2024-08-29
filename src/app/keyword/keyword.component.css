@@ -1,0 +1,340 @@
+/* General Styles */
+
+.tooltip-custom {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* Stil für die Liste der Namen */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Stil für jedes Listenelement */
+ul li {
+  cursor: pointer; /* Zeigt einen Finger-Cursor an */
+  transition: background-color 0.3s ease, border-bottom 0.3s ease; /* Sanfte Übergänge für Hintergrundfarbe und Unterstreichung */
+}
+
+/* Stil für Hover-Effekt */
+ul li:hover {
+  background-color: yellow; /* Hintergrundfarbe beim Hover */
+  border-bottom: 2px solid yellow; /* Gelbe Unterstreichung beim Hover */
+}
+
+/* Falls du zusätzlich sicherstellen willst, dass der Hover-Effekt auf das popover-element wirkt, könnte das so aussehen: */
+ul li .popover {
+  pointer-events: none; /* Damit das Popover nicht blockiert wird, während du über das Listenelement hoverst */
+}
+
+/* Optional: Verhindere, dass der Hover-Effekt auf das Popover wirkt */
+ul li .popover:hover {
+  background-color: transparent; /* Entferne jegliche Hintergrundfarbe beim Hover auf dem Popover */
+}
+
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.details-row {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-table thead th {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.custom-table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.custom-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.custom-table td:not(:first-child) {
+  border-left: 1px solid #dee2e6;
+}
+
+.custom-table th,
+.custom-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.custom-table tbody tr td:nth-child(2) {
+  text-align: left;
+}
+
+.custom-table tbody tr:hover td {
+  border-bottom: 2px solid #fbf315;
+}
+
+.custom-table tbody tr td:hover {
+  text-decoration: underline;
+  text-decoration-color: #fbf315;
+  text-decoration-thickness: 2px;
+}
+
+/* Button styles */
+.btn {
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  border-bottom: black;
+}
+
+.btn-warning {
+  background-color: #fbf315;
+  border-color: #fbf315;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Badge Styles */
+.badge-container {
+  padding: 10px;
+  border: 1px dashed #ced4da;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #000000;
+  color: white;
+}
+
+.remove-person {
+  margin-left: 2px;
+  margin-right: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+.remove-person:hover {
+  color: #fbf315;
+}
+
+/* Edit form container */
+.edit-form-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.edit-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Buttons for Department Selection */
+nav[aria-label="Department Selection"] {
+  margin-bottom: 1rem; /* Abstand unten hinzufügen */
+}
+
+nav .btn-group {
+  display: flex;
+  gap: 0.5rem; /* Abstand zwischen den Buttons */
+}
+
+nav .btn {
+  border: 1px solid #fbf315; /* Borderfarbe für Buttons */
+  background-color: #ffffff; /* Hintergrundfarbe für Buttons */
+  color: #000000; /* Textfarbe für Buttons */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem; /* Abgerundete Ecken */
+  transition: background-color 0.2s, color 0.2s; /* Übergangseffekte */
+}
+
+nav .btn.active {
+  background-color: #fbf315; /* Hintergrundfarbe für den aktiven Button */
+  color: #000000; /* Textfarbe für den aktiven Button */
+}
+
+nav .btn:hover {
+  background-color: #e9ecef; /* Hintergrundfarbe beim Hover über einen Button */
+  color: #000000; /* Textfarbe beim Hover über einen Button */
+}
+
+nav .btn.active:hover {
+  background-color: #e5de14; /* Hintergrundfarbe beim Hover über einen Button */
+  color: #000000; /* Textfarbe beim Hover über einen Button */
+}
+
+/* Offcanvas Styles */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1050; /* Sicherstellen, dass es über anderem Inhalt liegt */
+}
+
+.offcanvas.show {
+  transform: translateX(0);
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa; /* Hintergrundfarbe für den Header */
+}
+
+.offcanvas-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #000000; /* Farbe für das Schließen-Icon */
+  cursor: pointer;
+  transition: color 0.2s; /* Übergangseffekt für Farbe */
+}
+
+.btn-close:hover {
+  color: #ddd612; /* Farbe beim Hover über das Schließen-Icon */
+}
+
+.offcanvas-body {
+  padding: 1rem;
+}
+
+/* Optional: Add backdrop for offcanvas visibility */
+.offcanvas-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1040; /* Direkt unterhalb der Offcanvas */
+}
+
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1060; /* Ensure it is above other content */
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  z-index: 1001; /* Ensure it is above the overlay */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.modal-title {
+  margin: 0;
+}
+th {
+  cursor: pointer;
+  user-select: none;
+}
+.bi-arrow-up, .bi-arrow-down {
+  margin-left: 5px;
+}
+.btn-link {
+  color: #000000; 
+  font-size: 0.875rem; 
+  padding: 0.25rem 0.5rem; 
+}
+.btn-link:hover {
+  color: #fbf315; 
+  text-decoration: underline; 
+}
+
+
+
+

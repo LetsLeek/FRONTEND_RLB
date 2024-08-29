@@ -1,0 +1,33 @@
+/* Add styles for the badge container */
+.badge-container {
+    padding: 10px;
+    border: 1px dashed #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style individual badges */
+  .badge {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #000000;
+    color: white;
+  }
+  
+  /* Style the remove button */
+  .remove-person {
+    margin-left: 2px;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  /* Hover effect for remove button */
+  .remove-person:hover {
+    color: #fbf315; /* Yellow color on hover */
+  }
+  

@@ -1,0 +1,64 @@
+<!-- Abteilungsübersicht nur anzeigen, wenn der Benutzer kein Worker ist -->
+<div *ngIf="!showTable">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Overview</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button class="btn btn-sm btn-outline-secondary">Share</button>
+        <button class="btn btn-sm btn-outline-secondary">Export</button>
+      </div>
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This Week
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal" style="font-size: 10px"></h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">Produktion</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><i class="bi bi-building-fill-gear icon-large"></i></li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" (click)="selectDepartment('Produktion')">View</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal" style="font-size: 10px">
+            <span data-feather="file"></span>
+          </h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">IT</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><i class="bi bi-pc-display-horizontal icon-large"></i></li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" (click)="selectDepartment('IT')">View</button>
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal" style="font-size: 10px">
+            <span data-feather="users"></span>
+          </h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">NET</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><i class="bi bi-diagram-2 icon-large"></i></li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" (click)="selectDepartment('NET')">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tabelle nur anzeigen, wenn ein Department ausgewählt wurde oder der Benutzer ein Worker ist -->
+<app-check-protocol-table *ngIf="showTable" [department]="department"></app-check-protocol-table>

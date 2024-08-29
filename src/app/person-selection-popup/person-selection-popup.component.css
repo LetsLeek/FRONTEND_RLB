@@ -1,0 +1,31 @@
+.list-group-item.active {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+  }
+  
+  .list-group-item.previously-selected {
+    background-color: #fbf315;
+    border-color: #fbf315;
+    color: black;
+  }
+  
+  .badge-container {
+    cursor: pointer;
+    border: 1px dashed #ced4da;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 10px;
+  }
+  
+  .remove-person {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  

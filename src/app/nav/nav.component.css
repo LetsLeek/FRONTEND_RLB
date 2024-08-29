@@ -1,0 +1,55 @@
+/* Optional: Add backdrop for offcanvas visibility */
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1040; /* Direkt unterhalb der Offcanvas */
+  }
+  
+  .confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1060; /* Ensure it is above other content */
+  }
+  
+  .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    z-index: 1001; /* Ensure it is above the overlay */
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-title {
+    margin: 0;
+  }

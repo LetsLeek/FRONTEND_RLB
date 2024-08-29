@@ -1,0 +1,55 @@
+<h2>
+  Check Protocol Table
+  <span [ngStyle]="{'background-color': '#fbf315', 'color': '#000', 'font-weight': 'bolder'}">
+    <span [ngStyle]="{'background-color': '#fff', 'color': '#000', 'font-weight': 'lighter'}"> - </span>
+    {{ !userInfo.isAdmin ?  userInfo.department :  department}}
+  </span>
+</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th (click)="sortChecks('date')">Datum
+          <i *ngIf="sortColumn === 'date'" 
+             class="bi" 
+             [ngClass]="sortDirection === 'asc' ? 'bi-caret-up' : 'bi-caret-down'">
+          </i>
+        </th>
+        <th (click)="sortChecks('remark')">Bemerkung
+          <i *ngIf="sortColumn === 'remark'" 
+             class="bi" 
+             [ngClass]="sortDirection === 'asc' ? 'bi-caret-up' : 'bi-caret-down'">
+          </i>
+        </th>
+        <th (click)="sortChecks('state')">Status
+          <i *ngIf="sortColumn === 'state'" 
+             class="bi" 
+             [ngClass]="sortDirection === 'asc' ? 'bi-caret-up' : 'bi-caret-down'">
+          </i>
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let check of checkList">
+        <td [ngClass]="check.isChecked ? 'text-success' : 'text-danger'">
+          {{ check.isChecked ? 'Checked' : 'Not Checked' }}
+          ({{getProgressValue(check.id)}}%)
+        </td>
+        <td>{{ check.date.split(' ')[0] }}</td>
+        <td [ngClass]="check.remark === 'HOLIDAY' || check.remark === 'WEEKEND' ? 'text-remark' : ''">
+          {{ check.remark === 'HOLIDAY' ? 'Feiertag' : check.remark === 'WEEKEND' ? 'Wochenende' : check.remark }}
+        </td>
+        <td>
+          {{ check.isChecked ? 'Alle Kontrollen für den heutigen Tag wurden durchgeführt' : check.state }}
+        </td>
+        <td>
+          <a [routerLink]="['/check-details', check.id]" [queryParams]="{ dep: check.department }" class="custom-btn">Detail</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
